@@ -1,0 +1,623 @@
+/*
+---------------------------------
+|       |     (header)          |
+|       |                       |
+|       |                       |
+| SIDE  |      PAGE             |
+| PANEL |      PANEL            |
+|       |                       |
+|       |                       |
+|       |                       |
+---------------------------------
+
+*/
+
+/* COLORS 
+kinda-grey:  #24262b,
+kinda-yellow: rgb(216, 201, 33);
+*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  color: #24262b;
+}
+
+/************************************************************************************************
+****** APP ******************************************************************************** 
+*************************************************************************************************/
+.app-container {
+  width: 100%;
+  height: 100vh;
+  margin: 0 auto;
+  text-align: center;
+  background-color: #3f424b;
+
+  display: flex;
+}
+
+/************************************************************************************************
+****** SIDE PANEL ***************************************************************************** 
+*************************************************************************************************/
+.side-panel-container {
+  background-color: #24262b;
+  width: 20%;
+  height: 1000px;
+  position: fixed;
+  overflow: hidden;
+}
+
+/*USER PANEL*/
+.user-container {
+  background-color: #24262b;
+  height: 100px;
+  padding: 0 50px 0 30px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid cornsilk;
+}
+
+.user-icon-container {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: cornsilk;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.user-icon-container:hover .user-icon {
+  transform: scale(1.15);
+  transition: all 1s ease;
+}
+
+.user-icon-container:not(:hover):not(:active) .user-icon {
+  transition: all 1s ease;
+}
+
+.super-user-icon {
+  font-size: 40px;
+}
+.admin-user-icon {
+  font-size: 40px;
+}
+.normal-user-icon {
+  font-size: 40px;
+  margin-left: 6px;
+}
+.view-user-icon {
+  font-size: 36px;
+}
+
+.logout-btn-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.logout-btn {
+  padding: 10px 10px;
+  border: none;
+  background-color: cornsilk;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 2px;
+}
+
+.logout-btn:hover {
+  transform: scale(1.15);
+
+  font-weight: bold;
+  transition: all 0.5s ease;
+}
+
+.logout-btn:focus {
+  box-shadow: 0 0 0 2px #24262b, inset 0 0 0 1px #fff;
+}
+
+.logout-btn:not(:hover):not(:active) {
+  /* Transition when leaving */
+  transition: all 0.5s ease;
+}
+
+/*NAV PANEL*/
+.nav-container {
+  background-color: #24262b;
+  height: max-content;
+  padding: 30px 0 30px 0;
+
+  display: flex;
+  justify-content: center;
+}
+
+.nav-ul {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+
+  list-style-type: none;
+}
+
+.nav-option-container {
+  height: 30px;
+  border-radius: 2px;
+  padding: 24px 30px;
+  background-color: #24262b;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+}
+
+.nav-option-container:hover {
+  background-color: #3f424b;
+  transition: all 1s ease;
+  border-left: 3px solid cornsilk;
+}
+
+.nav-option-container:not(:hover):not(:active) {
+  /* Transition when leaving */
+  transition: all 0.5s ease;
+}
+
+.nav-option-container:hover .nav-icon {
+  transition: all 1s ease;
+  color: cornsilk;
+}
+
+.nav-option-container .nav-icon:not(:hover):not(:active) {
+  /* Transition when leaving */
+  transition: all 0.5s ease;
+}
+
+.nav-option-container div {
+  padding-left: 26px;
+  display: flex;
+  gap: 22px;
+  align-items: center;
+}
+
+.nav-icon {
+  font-size: 22px;
+  color: cornsilk;
+}
+
+.nav-paragraph {
+  font-size: 16px;
+  color: cornsilk;
+}
+
+/************************************************************************************************
+****** HEADER ********************************************************************************* 
+*************************************************************************************************/
+.header-container {
+  height: 100px;
+  background-color: #24262b;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid cornsilk;
+}
+
+.header-h1 {
+  color: cornsilk;
+}
+
+/************************************************************************************************
+****** PAGE PANEL *****************************************************************************
+*************************************************************************************************/
+.page-panel-container {
+  background-color: #3f424b;
+  width: 100%;
+  height: 80vh;
+}
+
+/************************************************************************************************
+****** HOME ************************************************************************************ 
+*************************************************************************************************/
+.home-container {
+  height: inherit;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.home-h1 {
+  color: cornsilk;
+}
+
+/************************************************************************************************
+****** MANAGE USERS *****************************************************************************
+************************************************************************************************ */
+.manageUsers-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20vh;
+  height: inherit;
+}
+
+.manageUser-btn {
+  border: none;
+  /* padding: 30px 30px; */
+  width: 250px;
+  height: 250px;
+  background-color: #24262b;
+  color: #4a4e59;
+  font-size: 26px;
+  font-weight: bold;
+  border-radius: 2px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.manageUser-btn:hover {
+  transform: scale(1.08);
+  transition: all 1s ease;
+  color: cornsilk;
+}
+
+.manageUser-btn:not(:hover):not(:active) {
+  transition: all 1s ease;
+}
+
+.delete-user-icon {
+  font-size: 80px;
+  margin-left: 10px;
+}
+
+/************************************************************************************************
+****** REGISTER USER **************************************************************************** 
+*************************************************************************************************/
+.registerUser-container {
+  height: inherit;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.registerUser-form-container {
+  background-color: #24262b;
+  padding: 40px 40px 80px 40px;
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.registerUser-form-p {
+  display: flex;
+}
+
+.registerUser-form-p p {
+  color: white;
+  font-size: 26px;
+  font-weight: bold;
+}
+
+.registerUser-form-container label {
+  color: white;
+}
+
+.registerUser-form-select {
+  border: none;
+  outline: none;
+  padding: 10px;
+  font-size: 16px;
+  margin-top: 16px;
+}
+
+.registerUser-form-select-label-container {
+  margin-top: 36px;
+  display: flex;
+}
+.registerUser-form-select-label {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/************************************************************************************************
+****** DELETE USER **************************************************************************** 
+*************************************************************************************************/
+.deleteUser-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.deleteUser-form-p {
+  display: flex;
+}
+.deleteUser-form-p p {
+  color: white;
+  font-size: 26px;
+  font-weight: bold;
+}
+
+.deleteUser-form-container {
+  background-color: #24262b;
+  padding: 40px 40px 80px 40px;
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.delete-btn:hover {
+  transition: all 1s ease;
+}
+
+.delete-btn:not(:hover):not(:active) {
+  transition: all 1s ease;
+}
+
+/************************************************************************************************
+****** LOGIN ************************************************************************************
+************************************************************************************************ */
+.login-container {
+  width: 100%;
+  height: inherit;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-form-container {
+  background-color: #24262b;
+  padding: 40px 40px 60px 40px;
+}
+
+.login-form-p {
+  display: flex;
+}
+.login-form-p p {
+  color: white;
+  font-size: 26px;
+  font-weight: bold;
+}
+
+/************************************************************************************************
+****** PROFILE ************************************************************************************
+************************************************************************************************ */
+.profile-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile-window {
+  background-color: #24262b;
+  padding: 40px 30px 60px 30px;
+  width: 450px;
+}
+
+.info-container h1 {
+  color: white;
+  border-bottom: 1px solid white;
+  padding-bottom: 5px;
+}
+.info-container p {
+  color: white;
+  margin-top: 16px;
+}
+
+/************************************************************************************************
+****** MODAL ************************************************************************************
+************************************************************************************************ */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9999;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(256, 256, 256, 0.4);
+  z-index: -1;
+}
+
+.modal-container {
+  background-color: #24262b;
+  padding: 20px 40px 20px 40px;
+  height: 260px;
+  width: 400px;
+  border-radius: 2px;
+
+  position: absolute;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  z-index: 1;
+  gap: 20px;
+  position: absolute;
+  top: 26.8%;
+  left: 46.1%;
+
+  z-index: 1;
+}
+
+.buttons-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-header p {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: white;
+}
+
+.form-control.modal-form-control {
+  margin: 12px 0;
+}
+
+.modal-btn {
+  border: none;
+  background-color: white;
+  padding: 10px 20px;
+  width: 100px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 2px;
+}
+
+.modal-btn:hover {
+  transform: scale(1.1);
+  transition: all 1s ease;
+}
+
+.modal-btn:not(:hover):not(:active) {
+  transition: all 1s ease;
+}
+
+/************************************************************************************************
+****** FOOTER ***********************************************************************************
+************************************************************************************************ */
+.footer-container {
+  width: 100%;
+  height: 30vh;
+  background-color: #24262b;
+}
+
+/************************************************************************************************
+****** GENERALS *********************************************************************************
+************************************************************************************************ */
+button {
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+.submit-btn {
+  margin-top: 26px;
+  border: none;
+  padding: 10px;
+  font-size: 16px;
+  width: 100%;
+  font-weight: bold;
+}
+
+.submit-btn:hover {
+  transform: scale(1.04);
+  transition: all 1s ease;
+}
+.submit-btn:not(:hover):not(:active) {
+  transition: all 1s ease;
+}
+
+.form-control {
+  border: none;
+  height: 40px;
+  width: 100%;
+  outline: none;
+  background-color: white;
+  padding: 10px;
+  margin-top: 26px;
+  border-radius: 2px;
+  font-size: 16px;
+}
+/* Prevent background when autofilling */
+input:-webkit-autofill,
+input:-webkit-autofill:focus {
+  transition: background-color 600000s 0s, color 600000s 0s;
+}
+
+/* GO BACK COMPONENT */
+.goBack-container {
+  height: 100px;
+  width: 100%;
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  padding-right: 50px;
+}
+
+.goBack-btn {
+  border: none;
+  padding: 10px 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  font-size: 16px;
+  font-weight: bold;
+  background-color: #24262b;
+  color: white;
+}
+
+.goBack-btn:hover {
+  transform: scale(1.08);
+  transition: all 1s ease;
+}
+.goBack-btn:not(:hover):not(:active) {
+  transition: all 1s ease;
+}
+
+.goBack-icon {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.loadingSpinnerContainer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 5000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loadingSpinner {
+  width: 64px;
+  height: 64px;
+  border: 8px solid;
+  border-color: #000 transparent #555 transparent;
+  border-radius: 50%;
+  animation: spin 1.2s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
