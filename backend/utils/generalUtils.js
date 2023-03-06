@@ -1,4 +1,9 @@
 /**
+ * General utilities
+ * @module generalUtils
+ */
+
+/**
  *
  * @param {function} fn
  * @returns {Promise}

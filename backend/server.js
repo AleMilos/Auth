@@ -11,6 +11,11 @@ const PORT = process.env.PORT || 5000;
 
 connectDB();
 
+/**
+ * @file server.js manages the whole structure of the application
+ * @author Alessandro Milos
+ */
+
 var app = express();
 
 if (process.env.NODE_ENV === "production") {

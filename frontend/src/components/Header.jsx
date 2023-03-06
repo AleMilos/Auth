@@ -1,5 +1,8 @@
 import React from "react";
 
+/**
+ * @desc Generates an Header component
+ */
 const Header = () => {
   return (
     <div className="header-container">

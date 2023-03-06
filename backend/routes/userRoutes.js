@@ -7,6 +7,11 @@ const {
 } = require("../controllers/authController");
 const { protect } = require("../middlewares/authMiddleware");
 
+/**
+ * Routes for the user
+ * @module userRoutes
+ */
+
 // ROUTES
 router.post("/login", login);
 router.post("/register", protect, register);

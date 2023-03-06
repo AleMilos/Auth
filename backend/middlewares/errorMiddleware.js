@@ -1,3 +1,16 @@
+/**
+ * Middleware to manage raised errors in the applicaiton
+ * @module errorMiddleware
+ */
+
+/**
+ *
+ * @param {Error} err - Thrown Error
+ * @param {object} req - Request object
+ * @param {object} res - Response object
+ * @param {CallbackFunction} next - next callback
+ * @desc Error Handler
+ */
 const errorHandler = (err, req, res, next) => {
   const statusCode = res.statusCode < 400 ? 500 : res.statusCode;
 

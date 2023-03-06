@@ -1,5 +1,10 @@
 const mongoose = require("mongoose");
 
+/**
+ * User Schema
+ * @module userModel
+ */
+
 const UserSchema = mongoose.Schema(
   {
     email: {

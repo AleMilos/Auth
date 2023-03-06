@@ -4,6 +4,14 @@ require("dotenv").config();
 const devConnection = process.env.MONGO_DEV_URI;
 const prodConnection = process.env.MONGO_PROD_URI;
 
+/**
+ * Database runner
+ * @module db
+ */
+
+/**
+ * @desc   Connect to the database with mongoose.connect(uri)
+ */
 const connectDB = async () => {
   try {
     if (process.env.NODE_ENV === "production") {

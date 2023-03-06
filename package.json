@@ -13,9 +13,11 @@
     "server": "nodemon backend/server.js",
     "client": "npm start --prefix frontend",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "test": "jest"
+    "test": "jest",
+	"doc": "jsdoc -c jsdoc.json"
   },
   "devDependencies": {
-    "jest": "^29.4.3"
+    "jest": "^29.4.3",
+    "jsdoc": "^4.0.2"
   }
 }

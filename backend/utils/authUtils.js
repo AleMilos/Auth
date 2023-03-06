@@ -1,6 +1,11 @@
 const jsonwebtoken = require("jsonwebtoken");
 
 /**
+ * Utils for the authentication
+ * @module authUtils
+ */
+
+/**
  *  @param {String} id
  *  @returns {String} token
  *
@@ -17,7 +22,7 @@ const generateToken = (id) => {
 /**
  *
  * @param {String} password
- * @returns {Array: [Boolean, String]}
+ * @returns {Array}
  *
  * Returns an array containing a Boolean. If the Boolean is false, the array has also a string of the error
  */

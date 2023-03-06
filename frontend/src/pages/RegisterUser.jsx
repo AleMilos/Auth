@@ -49,7 +49,7 @@ const RegisterUser = () => {
   const onSubmit = (e) => {
     e.preventDefault();
     if (confirmationPassword === password) {
-      dispatch(registerUser({ ...userData, ...role }));
+      dispatch(registerUser({ ...userData, role }));
     } else {
       toast.error("Password don't match");
     }

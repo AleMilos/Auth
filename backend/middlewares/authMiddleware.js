@@ -2,6 +2,17 @@ const jsonwebtoken = require("jsonwebtoken");
 const { asyncHandler } = require("../utils/generalUtils");
 const User = require("../models/userModel");
 
+/**
+ * Middleware to check user token
+ * @module authMiddleware
+ */
+
+/**
+ * @param {object} req - Request object
+ * @param {object} res - Response object
+ * @param {CallbackFunction} next - next callback
+ * @desc   Read Authentication header and check Bearer Token. If the user is succesfully found, call the next() middleware function
+ */
 const protect = asyncHandler(async (req, res, next) => {
   let token;
 
@@ -21,12 +32,12 @@ const protect = asyncHandler(async (req, res, next) => {
       next();
     } catch (err) {
       res.status(401);
-      throw new Error("Not Authorized 1");
+      throw new Error("Not Authorized");
     }
   }
   if (!token) {
     res.status(401);
-    throw new Error("Not Authorized 2");
+    throw new Error("Not Authorized");
   }
 });
 
